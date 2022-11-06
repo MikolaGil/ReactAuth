@@ -14,12 +14,12 @@ export default function ForgotPassword() {
     e.preventDefault()
 
     try {
-        setMessage('')
+      setMessage("")
       setError("")
       setLoading(true)
       
-        await resetPassword(emailRef.current.value)
-        setMessage('Check your email for the next step')
+      await resetPassword(emailRef.current.value)
+      setMessage('Check your email for the next step')
     } catch(err) {
       setError('Failed to reset password')
     }

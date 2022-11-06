@@ -10,7 +10,7 @@ export default function UpdateProfile() {
   const { currentUser, updatePassword, updateEmail } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -30,8 +30,8 @@ export default function UpdateProfile() {
     }
 
     Promise.all(promises).then(()=>{
-        history.push('/');
-    }).catch(err =>{
+        navigate('/');
+    }).catch(() =>{
         setError("Failed to update");
     }).finally(()=>{
         setLoading(false)
@@ -73,9 +73,6 @@ export default function UpdateProfile() {
             </Button>
 
           </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password">Forgot password?</Link>
-          </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
