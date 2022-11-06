@@ -3,13 +3,13 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
 
-export default function SignUp() {
+export default function Signup() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
   const { signup } = useAuth()
-  const { currentUser } = useAuth()
-  const history = useNavigate();
+  
+  const navigate = useNavigate();
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
@@ -25,7 +25,7 @@ export default function SignUp() {
       setLoading(true)
       
       await signup(emailRef.current.value, passwordRef.current.value)
-      history.push("/");
+      navigate("/");
     } catch(err) {
       setError(`Failed to create an account`)
     }
