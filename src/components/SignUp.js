@@ -57,7 +57,7 @@ export default function Signup() {
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
             <Form.Label style={{height: '30px'}}/>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100 button-default" type="submit">
               Sign Up
             </Button>
 

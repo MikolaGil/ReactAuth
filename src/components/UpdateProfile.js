@@ -68,7 +68,7 @@ export default function UpdateProfile() {
             </Form.Group>
 
             <Form.Label style={{height: '30px'}}/>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100 button-default" type="submit">
               Update
             </Button>
 
